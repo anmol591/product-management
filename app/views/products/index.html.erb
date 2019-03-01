@@ -1,0 +1,26 @@
+<% content_for :head do %>
+  <title>List Items</title>
+<% end %>
+
+<%= render "partials/index" %>
+
+<p><%= flash[:success] %></p>
+<% if @products.blank? %>
+	<p>There are no products currently in the system</p>
+	<p><%= link_to "Add new product", :action => "new" %></p>
+	<%else%>
+	
+
+	<%Product.all.each do |f|%>
+	<div id="product_block">
+		
+		<p><%= f.name %>
+		<%= link_to 'Edit', :action => "edit", :id=>f.id %>&nbsp;&nbsp;
+		<%= link_to 'Delete',f, method: :delete, :class=>'btn btn-info btn-xs', :remote=>true %>&nbsp;&nbsp; <%#button is not loading properly%>
+
+		<%= link_to 'Show Details',f, :action => "show", :id=>f.id, :class=>'btn btn-info btn-xs' %></p>
+	</div>
+	<%end%>
+<%end%>
+<hr>
+<%= link_to "Add a new product", :action => "new" %>

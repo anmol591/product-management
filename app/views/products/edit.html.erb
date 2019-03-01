@@ -1,0 +1,9 @@
+<% content_for :head do %>
+  <title>Edit product details</title>
+<% end %>
+<h1>Edit product details</h1>
+<%= form_for @product, url: {action: "update"} do |f|%>
+	<%= render :partial=>"partials/edit", :locals=>{:f=>f}%>
+	<%end%>
+	<hr>
+	<%= link_to "Back", :action => "index" %>

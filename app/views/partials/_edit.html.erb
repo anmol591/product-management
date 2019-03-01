@@ -1,0 +1,18 @@
+<div class: 'form-group'>
+    <%= f.label :name %>
+    <%= f.text_field :name, class: 'form-control'%>
+  </div>
+  <div class: 'form-group'>
+    <%= f.label :price%>
+    <%= f.text_field :price, class: 'form-control' %>
+  </div>
+  <!--<div class :'dropdown show'>
+  <a class: 'btn btn-secondary dropdown-toggle' href="#" role="button" id="dropdownMenuLink" data-toggle: 'dropdown' aria-haspopup: 'true' aria-expanded: 'false'>
+    select
+  </a>-->
+
+  <div class: 'dropdown-menu' aria-labelledby: 'dropdownMenuLink'>
+    <%= f.collection_select(:category_id, Category.all, :id, :name, prompt: true)%>
+  </div>
+</div>
+  <p><%= f.submit value='Update product' %></p>

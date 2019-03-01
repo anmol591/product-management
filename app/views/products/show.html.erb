@@ -1,0 +1,11 @@
+<% content_for :head do %>
+  <title>show product details</title>
+<% end %>
+<h1>Product details</h1>
+<p><strong>Product name:</strong><%= @product.name %></p>
+<p><strong>Product price</strong><%= @product.price %></p>
+<p><strong>Product category</strong><%= @product.category.name %></p>
+<p><strong>Product created date</strong><%= @product.created_at %></p>
+<p><strong>Product updated date</strong><%= @product.updated_at %></p>
+<hr>
+<%= link_to "Back", :action => "index" %>
